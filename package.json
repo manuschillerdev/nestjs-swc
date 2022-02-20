@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "NODE_ENV=production nest build",
+    "build": "swc --delete-dir-on-start --out-dir dist/ src/",
     "start": "nest start",
     "start:dev": "HMR=true node -r @swc/register src/hmr.ts ",
     "start:prod": "node dist/main",

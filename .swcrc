@@ -1,4 +1,5 @@
 {
+  "exclude": [".spec.ts$", "node_modules", "hmr.ts"],
   "sourceMaps": true,
   "module": {
     "type": "commonjs",
