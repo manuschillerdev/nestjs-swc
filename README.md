@@ -46,6 +46,8 @@ Summary
 
 ### jest
 
+#### unit tests
+
 ```bash
 ❯ time "dum test:ts-jest" "dum test:swc"
 Benchmark #1: dum test:ts-jest
@@ -59,6 +61,39 @@ Benchmark #2: dum test:swc
 Summary
   'dum test:swc' ran
     2.59 ± 0.11 times faster than 'dum test:ts-jest'
+```
+
+#### unit tests with coverage
+
+```bash
+❯ time "dum test:cov:ts-jest" "dum test:cov:swc"
+Benchmark #1: dum test:cov:ts-jest
+  Time (mean ± σ):     10.206 s ±  0.583 s    [User: 50.058 s, System: 4.228 s]
+  Range (min … max):    9.651 s … 11.351 s    10 runs
+
+Benchmark #2: dum test:cov:swc
+  Time (mean ± σ):      2.044 s ±  0.170 s    [User: 5.328 s, System: 1.151 s]
+  Range (min … max):    1.881 s …  2.302 s    10 runs
+
+Summary
+  'dum test:cov:swc' ran
+    4.99 ± 0.50 times faster than 'dum test:cov:ts-jest'
+```
+
+#### e2e tests
+
+```bash
+Benchmark #1: dum test:e2e:ts-jest
+  Time (mean ± σ):      3.817 s ±  0.190 s    [User: 5.280 s, System: 0.710 s]
+  Range (min … max):    3.659 s …  4.204 s    10 runs
+
+Benchmark #2: dum test:e2e:swc
+  Time (mean ± σ):      2.138 s ±  0.114 s    [User: 1.934 s, System: 0.477 s]
+  Range (min … max):    2.052 s …  2.436 s    10 runs
+
+Summary
+  'dum test:e2e:swc' ran
+    1.79 ± 0.13 times faster than 'dum test:e2e:ts-jest'
 ```
 
 ## Caveats
