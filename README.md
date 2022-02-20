@@ -30,32 +30,35 @@ foo
 ### production build
 
 ```bash
-❯ time "dum build" "dum build:swc"
-Benchmark #1: dum build
-  Time (mean ± σ):      2.994 s ±  0.116 s    [User: 4.402 s, System: 0.364 s]
-  Range (min … max):    2.906 s …  3.288 s    10 runs
+❯ time "dum build:nest-cli" "dum build:swc"
+Benchmark #1: dum build:nest-cli
+  Time (mean ± σ):      2.988 s ±  0.128 s    [User: 4.386 s, System: 0.365 s]
+  Range (min … max):    2.904 s …  3.329 s    10 runs
 
 Benchmark #2: dum build:swc
-  Time (mean ± σ):     161.5 ms ±   2.6 ms    [User: 111.0 ms, System: 49.0 ms]
-  Range (min … max):   156.4 ms … 165.7 ms    17 runs
+  Time (mean ± σ):     163.5 ms ±   7.3 ms    [User: 112.7 ms, System: 47.4 ms]
+  Range (min … max):   156.9 ms … 186.8 ms    18 runs
 
 Summary
   'dum build:swc' ran
-   18.53 ± 0.78 times faster than 'dum build'
+   18.27 ± 1.13 times faster than 'dum build:nest-cli'
 ```
 
 ### jest
 
 ```bash
-❯ hyperfine "npm run test" # with ts-jest
-Benchmark #1: npm run test
-  Time (mean ± σ):      3.436 s ±  0.349 s    [User: 4.680 s, System: 0.543 s]
-  Range (min … max):    3.156 s …  4.211 s    10 runs
+❯ time "dum test:ts-jest" "dum test:swc"
+Benchmark #1: dum test:ts-jest
+  Time (mean ± σ):      2.809 s ±  0.114 s    [User: 4.445 s, System: 0.489 s]
+  Range (min … max):    2.723 s …  3.076 s    10 runs
 
-❯ hyperfine "npm run test" # with @swc/jest
-Benchmark #1: npm run test
-  Time (mean ± σ):      1.447 s ±  0.020 s    [User: 1.268 s, System: 0.323 s]
-  Range (min … max):    1.428 s …  1.500 s
+Benchmark #2: dum test:swc
+  Time (mean ± σ):      1.083 s ±  0.011 s    [User: 985.3 ms, System: 262.2 ms]
+  Range (min … max):    1.072 s …  1.112 s    10 runs
+
+Summary
+  'dum test:swc' ran
+    2.59 ± 0.11 times faster than 'dum test:ts-jest'
 ```
 
 ## Caveats

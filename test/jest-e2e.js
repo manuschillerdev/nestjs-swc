@@ -1,4 +1,4 @@
-{
+module.exports = {
   "moduleFileExtensions": [
     "js",
     "json",
@@ -8,6 +8,6 @@
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
-    "^.+\\.(t|j)s$": "@swc/jest"
+    "^.+\\.(t|j)s$": process.env.JEST_TS_TRANSFORMER || "@swc/jest"
   }
 }
