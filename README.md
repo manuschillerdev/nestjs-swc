@@ -27,6 +27,23 @@ foo
 
 ## Benchmarks
 
+### production build
+
+```bash
+❯ time "dum build" "dum build:swc"
+Benchmark #1: dum build
+  Time (mean ± σ):      2.994 s ±  0.116 s    [User: 4.402 s, System: 0.364 s]
+  Range (min … max):    2.906 s …  3.288 s    10 runs
+
+Benchmark #2: dum build:swc
+  Time (mean ± σ):     161.5 ms ±   2.6 ms    [User: 111.0 ms, System: 49.0 ms]
+  Range (min … max):   156.4 ms … 165.7 ms    17 runs
+
+Summary
+  'dum build:swc' ran
+   18.53 ± 0.78 times faster than 'dum build'
+```
+
 ### jest
 
 ```bash
